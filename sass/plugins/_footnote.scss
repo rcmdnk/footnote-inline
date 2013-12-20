@@ -1,0 +1,10 @@
+.footnotes {
+  background: $img-border top left repeat-x;
+  font-size: 90%;
+}
+
+#footnotediv{
+  background: darken($main-bg, 11);
+  border: 2px solid darken($main-bg, 21);
+  @include border-radius(.4em);
+}
