@@ -119,3 +119,7 @@ to
       note = YourParser_to_html_method(note)
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/footnote-inline/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
