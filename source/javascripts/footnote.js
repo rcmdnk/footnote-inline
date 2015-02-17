@@ -78,4 +78,4 @@ var Footnotes = {
                 opacity: 0.9
         });
     }
-}
+};
