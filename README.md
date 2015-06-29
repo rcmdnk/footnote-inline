@@ -14,7 +14,7 @@ Although you can't use footnote-octopress and footnote-inline
 in the same post,
 you can use each plugin in different posts in the same blog.
 
-# Installation at Octopress
+## Installation at Octopress
 
 1. Copy `plugins/footnote_inline`
    to your `plugins` directory.
@@ -49,7 +49,8 @@ you can use each plugin in different posts in the same blog.
 
 Done!
 
-# Usage
+## Usage
+
 You can use footnote-inline like Latex's `footnote`.
 
 Write `{%fnin%}`-`{%endfnin%}` or `{%footnote_inline%}`-`{%endfootnote_inline%}`
@@ -100,7 +101,8 @@ in the post.
 In this case, it is no probrem even if there is footnote-octopress tag 
 or PHP Markdown Exra footnote syntax in the post.
 
-# Options
+## Options
+
 Change footnote styles in `sass/plugins/_footnote.scss` as you like.
 footnote-extra's `_footnote.scss` may be useful
 even if you already have `_footnote.scss` from footnote-octopress.
@@ -117,9 +119,3 @@ to
 
     if context['site.markdown'] == 'your_parser'
       note = YourParser_to_html_method(note)
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/footnote-inline/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
