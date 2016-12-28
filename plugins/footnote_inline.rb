@@ -8,7 +8,7 @@ module Jekyll
 
     def render(context)
       context['page']['fnin_count'] =\
-        (context['page'].has_key?('fnin_count')?\
+        (context['page'].key?('fnin_count')?\
            context['page']['fnin_count'] : 0
         ) + 1
       note = "#{super} <a href='#fninref:#{context['page']['fnin_count']}' rel='reference'>&#8617;</a>"
@@ -24,7 +24,7 @@ module Jekyll
         note = RubyPants.new(note).to_html
       end
       context['page']['fnin_notes'] =\
-        (context['page'].has_key?('fnin_notes')?\
+        (context['page'].key?('fnin_notes')?\
            context['page']['fnin_notes'] : "") +\
         "<li id='fnin:#{context['page']['fnin_count']}'>#{note}</li>"
       "<sup id='fninref:#{context['page']['fnin_count']}'><a href='#fnin:#{context['page']['fnin_count']}' rel='footnote'>#{context['page']['fnin_count']}</a></sup>"
@@ -38,7 +38,7 @@ module Jekyll
 
     def render(context)
       fnin_notes =\
-        (context['page'].has_key?('fnin_notes')?
+        (context['page'].key?('fnin_notes')?
           "<div class=\"footnotes\"><ol>#{context['page']['fnin_notes']}</ol></div>"\
           : "")
       context['page']['fnin_notes'] = ""
