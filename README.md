@@ -53,24 +53,24 @@ Done!
 
 You can use footnote-inline like Latex's `footnote`.
 
-Write `{%fnin%}`-`{%endfnin%}` or `{%footnote_inline%}`-`{%endfootnote_inline%}`
+Write `{% fnin %}`-`{% endfnin %}` or `{% footnote_inline %}`-`{% endfootnote_inline %}`
 at where you want to add a footnote.
 
 e.g.)
 
-    This is a footnote test{%fnin%}This is footnote.{%endfnin%}.
+    This is a footnote test{% fnin %}This is footnote.{% endfnin %}.
 
 You can also use code syntax with indent:
 
     This is a footnote test with code
-    {%fnin%}Code test:
+    {% fnin %}Code test:
     
         This is a code.
     
     This is a normal line.
     
     And `inline code`.
-    {%endfnin%}.
+    {% endfnin %}.
 
 Reference numbers for each footnote are assigned automatically,
 so that you don't need to fix numbers by yourself
@@ -82,20 +82,20 @@ footnote syntax.
 
 Finally, add a following line in the end of the post:
 
-    {%footnotes_inline%}
+    {% footnotes_inline %}
 
 or
 
-    {%footnotes_list_inline%}
+    {% footnotes_list_inline %}
 
 It is useful to add
 
-    post.puts "{%footnotes_inline%}"
+    post.puts "{% footnotes_inline %}"
 
 to the end of `new_post` task in Rake file.
 
-`{%footnotes_inline%}` does nothing if there is no
-`{%fnin%}`(`{%footnote_inline%}`)
+`{% footnotes_inline %}` does nothing if there is no
+`{% fnin %}`(`{% footnote_inline %}`)
 in the post.
 
 In this case, it is no probrem even if there is footnote-octopress tag 
