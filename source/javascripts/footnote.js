@@ -6,31 +6,31 @@ var Footnotes = {
     footnotetimeout: false,
     setup: function() {
         var footnotelinks = jQuery("a[rel='footnote']")
-        
-        footnotelinks.unbind('mouseover',Footnotes.footnoteover);
-        footnotelinks.unbind('mouseout',Footnotes.footnoteoout);
-        
-        footnotelinks.bind('mouseover',Footnotes.footnoteover);
-        footnotelinks.bind('mouseout',Footnotes.footnoteoout);
+
+        footnotelinks.off('mouseover',Footnotes.footnoteover);
+        footnotelinks.off('mouseout',Footnotes.footnoteoout);
+
+        footnotelinks.on('mouseover',Footnotes.footnoteover);
+        footnotelinks.on('mouseout',Footnotes.footnoteoout);
     },
     footnoteover: function() {
         clearTimeout(Footnotes.footnotetimeout);
         jQuery('#footnotediv').stop();
         jQuery('#footnotediv').remove();
-        
+
         var id = jQuery(this).attr('href').substr(1);
         var position = jQuery(this).offset();
-    
+
         var div = jQuery(document.createElement('div'));
         div.attr('id','footnotediv');
-        div.bind('mouseover',Footnotes.divover);
-        div.bind('mouseout',Footnotes.footnoteoout);
+        div.on('mouseover',Footnotes.divover);
+        div.on('mouseout',Footnotes.footnoteoout);
 
         var el = document.getElementById(id);
         div.html(jQuery(el).html());
         div.html($(el).html());
         div.find("a[rev='footnote']").remove();
-        
+
         div.css({
             position:'absolute',
             opacity:0.9,
